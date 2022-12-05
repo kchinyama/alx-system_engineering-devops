@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type fa -print | wc -l
+find . -type fa -print 
