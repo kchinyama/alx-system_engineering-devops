@@ -1,2 +1,2 @@
 #!/bin/bash
-tr .js -d
+find -type f -name "*.js" -d
