@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# simple script that displays list of files in my current working directory
+#+ only the name part should show and not the number
+
+for content in *
+do
+	echo $content | cut -d "-" -f 2
+done
