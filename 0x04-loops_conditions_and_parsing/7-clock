@@ -5,11 +5,11 @@
 
 k=0 # count for hours
 
-while (($k <= 12))
+while ((k <= 12))
 do
 	echo "Hour: $k"
 	n=1 # count for minutes
-	while (($n < 60 ))
+	while ((n < 60 ))
 	do
 		echo $n
 		n=$((n+1))
