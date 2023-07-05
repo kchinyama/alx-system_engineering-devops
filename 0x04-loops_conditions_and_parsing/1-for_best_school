@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-# simple script that demonstrates a for loop dsplaying the message Best School 10 times
-
-for (( k=0; k<10; k++ ));
-do
-	echo "Best School"
-done
