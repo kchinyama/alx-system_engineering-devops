@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-# simple script that displays its own pid
-ps

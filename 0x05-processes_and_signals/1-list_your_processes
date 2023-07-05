@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-#script showing command to display all processes
-ps -faux
