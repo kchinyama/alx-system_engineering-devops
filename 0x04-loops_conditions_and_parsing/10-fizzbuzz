@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+#demo script display of imfamour fizzbuzz
+
+nums=0
+
+while [ $nums -le 100 ]
+do
+if [ $nums%3 -eq 0 ]
+then
+echo "Fizz"
+elif [$nums%5 -eq 0 ]
+then
+echo "Buzz"
+elif [ $nums%5 -a $nums% 3 -eq 0 ]
+then
+echo "FizzBuzz"
+else
+echo "" $nums
+((nums++))
+done
