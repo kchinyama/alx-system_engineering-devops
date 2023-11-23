@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+#script demo of while loop printing Best School and Hi at 9th
+
+k=1
+
+while [ $k -lt 11 ]
+do
+if [ $k -eq 9 ]
+then
+echo "Hi"
+else
+echo "Best School"
+fi
+((k++))
+done
