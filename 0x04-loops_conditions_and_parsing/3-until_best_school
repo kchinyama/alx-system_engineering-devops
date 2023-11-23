@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#script demo of until loop displaying Best School 10 times
+
+k=0
+
+until [ $k -gt 9 ]
+do
+echo Best School
+((k++))
+done
