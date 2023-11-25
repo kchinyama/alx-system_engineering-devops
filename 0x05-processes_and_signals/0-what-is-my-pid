@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#this is a demo of command to display PID of script
+
+echo $$
