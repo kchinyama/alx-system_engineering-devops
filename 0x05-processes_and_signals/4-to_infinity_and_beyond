@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+#demo script of signal handling/trap(ing) with Ctrl+c command
+
+trap "echo; exit" SIGINT
+
+
+while true
+
+do
+
+echo "To infinity and beyond"
+
+sleep 2
+
+done
