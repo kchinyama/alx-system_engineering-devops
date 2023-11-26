@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#demo script that displays the PID along with name without ps command
+
+pgrep -l bash
