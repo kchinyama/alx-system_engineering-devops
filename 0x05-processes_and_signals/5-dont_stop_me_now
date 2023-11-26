@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#demo script that kills a process
+
+kill -SIGQUIT 1160
