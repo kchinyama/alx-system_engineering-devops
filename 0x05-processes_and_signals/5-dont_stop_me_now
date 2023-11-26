@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-#demo script that kills a process
+#demo script that kills/terminates a process
 
-kill -SIGKILL 1160
+kill "$(pgrep -f '4-to_infinity_and_beyond')"
