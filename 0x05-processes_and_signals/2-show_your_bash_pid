@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#script demo showing processes that have the 'bash' word-not allowed to use grep
+# shellcheck disable=SC2009
+
+ps -aux | less | grep bash
