@@ -1,20 +1,21 @@
 #!/usr/bin/env bash
-#demo script display of imfamour fizzbuzz
+#demo script display of the imfamous fizzbuzz
 
-nums=0
-
-while [ $nums -le 100 ]
+for k in {1..100}
 do
-if [ $nums%3 -eq 0 ]
-then
-echo "Fizz"
-elif [$nums%5 -eq 0 ]
-then
-echo "Buzz"
-elif [ $nums%5 -a $nums% 3 -eq 0 ]
-then
-echo "FizzBuzz"
-else
-echo "" $nums
-((nums++))
+	if [ $((k % 15)) -eq 0 ]
+	then
+		echo "FizzBuzz"
+
+	elif [ $((k % 5)) -eq 0 ]
+	then
+		echo "Buzz"
+
+	elif [ $((k % 3)) -eq 0 ]
+	then
+		echo "Fizz"
+
+	else
+		echo "$k"
+	fi
 done
