@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#demo script of signal handling/trap(ing) with Ctrl+c command and termination handling
+
+trap "echo; exit" SIGINT
+
+trap "echo I am invincible!!!; exit" SIGINT SIGTERM
+
+while true
+#trap "echo I am invincible!!!; exit" SIGTERM
+do
+
+echo "To infinity and beyond"
+#trap "echo I am invincible!!!; exit" SIGTERM
+sleep 2
+
+done
