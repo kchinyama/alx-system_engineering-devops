@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#demo script of output of hour numbers and miunte numbers via the while loop
+
+k=0
+c=1
+
+while [[ $k -le 12 ]]
+do
+echo "Hour:" $k
+c=1
+while [[ $c -lt 60 ]]
+do
+echo $c
+((c++))
+done
+((k++))
+done
