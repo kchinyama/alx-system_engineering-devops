@@ -1,1 +1,3 @@
-netstat-aon
+#!/usr/bin/env bash
+#demo script that displays listening ports
+netstat -l -p
