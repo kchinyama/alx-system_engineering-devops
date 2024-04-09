@@ -39,26 +39,39 @@ the router is outputted to the client via the output screen.
 With two servers we have one server that acts as the master, which is the main and only 
 server in use while the whole system is up and running. The other is the back and comes 
 into automatic use if the main server is overwhelmed with traffic or if it goes down due to a fault. 
-The load balancer is a device that monitors and directs to the servers that host websites. In our case we are using the Active-Passive Setup. The Active-Passive algorithm sets thew system will use one server actively so long that server is not down and is not overwhelmed with traffic. Thus the load balancer sends all traffic to the one master server. In the event that the master server is not able to 
+The load balancer is a device that monitors and directs to the servers that host websites. In our case we are 
+using the Active-Passive Setup. The Active-Passive algorithm sets thew system will use one server actively so 
+long that server is not down and is not overwhelmed with traffic. Thus the load balancer sends all traffic to 
+the one master server. In the event that the master server is not able to 
 take the traffic the balancer switches and directs traffic to the slave server. 
 
-The Active-Active Setup simply sets the system so that both servers are actively working and receiving web traffic and facilitating http requests. Normally in a 50-50 percent basis. This allows for 
+The Active-Active Setup simply sets the system so that both servers are actively working and receiving web 
+traffic and facilitating http requests. Normally in a 50-50 percent basis. This allows for 
 optimal traffic regulation and a less likelihood of traffic being too overwhelming.  
 
 In theory, this works fine and addresses the danger posed on one server systems.
 
 1. SPOF or Single Point of Failure refers to any place in the system where 
 if a fault develops the entire system or part of the system is compromised. 
-In this set up a SPOF at any point means access to the foobar.com website is still available due to the redundancy of the second or slave server which is acting as a back up server. However, a SPOF weakness is possible at the load balancer. In this system we all traffic is coordinated by the load balancer. In the event the load balancer is compromised then the website can be inaccessible regardless of the fact that there are 2 servers hosting the website.
+In this set up a SPOF at any point means access to the foobar.com website is still available due to the redundancy 
+of the second or slave server which is acting as a back up server. However, a SPOF weakness is possible at the load 
+balancer. In this system we all traffic is coordinated by the load balancer. In the event the load balancer is 
+compromised then the website can be inaccessible regardless of the fact that there are 2 servers hosting the website.
 
-2. Any maintenance of the website, can still be done without much downtime because traffic can be directed to one server whilst maintenance work is being done on the other and vice versa. All the time the website is still available to clients. Additionally, with too servers additional traffic can be managed and scalability of the website is better in this system.
+2. Any maintenance of the website, can still be done without much downtime because traffic can be directed to one 
+server whilst maintenance work is being done on the other and vice versa. All the time the website is still available 
+to clients. Additionally, with too servers additional traffic can be managed and scalability of the website is better 
+in this system.
 
 Disadvantages:
 1. This system has  no firewall so it is still susceptible to traffic overflow bringing the site down for users.
 
-2. This setup has not incorporated the additional; security features such as secure https browsing so user information can be maliciously manipulated and stolen.
+2. This setup has not incorporated the additional; security features such as secure https browsing so user information 
+can be maliciously manipulated and stolen.
 
-3. This system has no traffic monitoring as well as web site screening so hackers and other nefarious characters ca easily manipulate and tamper with this system set-up. Data protection is important, this 2 server system is doing little to protect the data that is being exchanged be the client and the servers. 
+3. This system has no traffic monitoring as well as web site screening so hackers and other nefarious characters can 
+easily manipulate and tamper with this system set-up. Data protection is important, this 2 server system is doing little 
+to protect the data that is being exchanged be the client and the servers. 
 
 
 https://drive.google.com/file/d/1xJBwLQJiC7IHUgvHbZyg4333xMtsEfyr/view?usp=sharing 
