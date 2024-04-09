@@ -1,19 +1,60 @@
-Below is a one server web infrastructure design illustrating the process from the point the client inputs a website to view to the point of completion for that request.
+Below is a one server web infrastructure design illustrating the process from the point 
+the client inputs a website to view to the point of completion for that request.
 
-The client inputs www.foobar.com. Assuming this is the first time the client desires to access this website the request is sent to the Resolver/Internet Service provider(usually via a router) and the router sends the request to the Domain Name Service (DNS). DNS is a system that maps human readable domain names(website string names) to their corresponding IP addresses. The DNS takes www.foobar.com, a CNAME (Canonical Name) record and maps it to the main domain name which directs to the server hosting the IP address where the website is located. A server is a computer system that provides resources, data, services to other computers which as known as clients. In our case the server hosting foobar.com is located at IP address 8.8.8.8.
+The client inputs www.foobar.com. Assuming this is the first time the client 
+desires to access this website the request is sent to the 
+Resolver/Internet Service provider(usually via a router) 
+and the router sends the request to the Domain Name 
+Service (DNS). DNS is a system that maps human readable 
+domain names(website string names) to their corresponding 
+IP addresses. The DNS takes www.foobar.com, a CNAME 
+(Canonical Name) record and maps it to the main domain 
+name which directs to the server hosting the IP address where 
+the website is located. A server is a computer system that provides 
+resources, data, services to other computers which as known as clients. 
+In our case the server hosting foobar.com is located at IP address 8.8.8.8.
 
-Our single server has 1 web server, 1 application server, 1 database and 1 domain name. A web server takes http requests and outputs static  html data. Static in that the output can not be interacted with in order to generate more complex and logical outcomes. This weakness is were the app server fills in. The app server takes the http request and generates a system that allows for the user of the website to interact with the website and generate logic that is relevant to the user. For instance, say i wanted to access a website that converts currencies from one to another. The web server will present the website that takes input of the currency i want to convert whilst also passing the request to the app server. The app server does the converting in the background and presents me with the logic of my request. 
+Our single server has 1 web server, 1 application server, 1 database and 
+1 domain name. A web server takes http requests and outputs static  
+html data. Static in that the output can not be interacted with in order to 
+generate more complex and logical outcomes. This weakness is were 
+the app server fills in. The app server takes the http request and generates 
+a system that allows for the user of the website to interact with the website 
+and generate logic that is relevant to the user. For instance, say i wanted 
+to access a website that converts currencies from one to another. The web 
+server will present the website that takes input of the currency i want to convert 
+whilst also passing the request to the app server. The app server does the 
+converting in the background and presents me with the logic of my request. 
 
-The web server passes the www.foobar.com request to the app server the app server generates the logic of the request, accessing the database through a database query. A database is simply an organised collection of information. Organised usually through tables of rows and columns for convenience. Access and manipulation of this data in the tables is through queries. The query response is passed back to the app server which in turn passes back to the web server for presentation to the client through an http web page. This page travels through the internet back to the router and from the router is outputted to the client via the output screen.
+The web server passes the www.foobar.com request to the app server the 
+app server generates the logic of the request, accessing the database through 
+a database query. A database is simply an organised collection of information. 
+Organised usually through tables of rows and columns for convenience. 
+Access and manipulation of this data in the tables is through queries. The 
+query response is passed back to the app server which in turn passes 
+back to the web server for presentation to the client through an http web 
+page. This page travels through the internet back to the router and from 
+the router is outputted to the client via the output screen.
 
-In theory, this works fine for just one website taking low levels of traffic however there are some drawbacks.
+In theory, this works fine for just one website taking low levels of traffic 
+however there are some drawbacks.
 
-1. SPOF or Single Point of Failure refers to any place in the system where if a fault develops the entire system or part of the system is compromised. In this set up a SPOF at any point will mean access to www.foobar.com is impossible because there is no redundancy system in place. Say a fault develops anywhere in the server(app server, web server, database). The website will not be accessed until the fault is dealt with.
+1. SPOF or Single Point of Failure refers to any place in the system where 
+if a fault develops the entire system or part of the system is compromised. 
+In this set up a SPOF at any point will mean access to www.foobar.com is 
+impossible because there is no redundancy system in place. Say a fault 
+develops anywhere in the server(app server, web server, database). 
+The website will not be accessed until the fault is dealt with.
 
-2. Maintenance of the website, will render the website inaccessible for the duration of the maintenance work. Downtime in this case would mean total blackout of the website for the duration of the maintenance work as there is no backup server that hosts the website.
+2. Maintenance of the website, will render the website inaccessible for the 
+duration of the maintenance work. Downtime in this case would mean total 
+blackout of the website for the duration of the maintenance work as there 
+is no backup server that hosts the website.
 
-3. Since this web structure is using one server say an increase in traffic to the site occurs, the danger of potentially overloading the site with visits is highly likely, scalling-up traffic capability is difficult because the site is being hosted on a single server.
-
+3. Since this web structure is using one server say an increase in traffic to 
+the site occurs, the danger of potentially overloading the site with visits 
+is highly likely, scalling-up traffic capability is difficult because the site is 
+being hosted on a single server.
 
 https://drive.google.com/file/d/1JifzNh9QXmb3Wa2o4VeNplxXew3BJI57/view?usp=sharing
 
