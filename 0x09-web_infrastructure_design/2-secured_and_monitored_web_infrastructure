@@ -1,0 +1,60 @@
+Below is a two server web infrastructure design illustrating the process from the point 
+the client inputs a website to view to the point of completion for that request.
+
+The client inputs www.foobar.com. Assuming this is the first time the client 
+desires to access this website the request is sent to the 
+Resolver/Internet Service provider(usually via a router) 
+and the router sends the request to the Domain Name 
+Service (DNS). DNS is a system that maps human readable 
+domain names(website string names) to their corresponding 
+IP addresses. The DNS takes www.foobar.com, a CNAME 
+(Canonical Name) record and maps it to the main domain 
+name which directs to the server hosting the IP address where 
+the website is located. A server is a computer system that provides 
+resources, data, services to other computers which as known as clients. 
+In our case we have 3 servers.
+
+The three servers each have 1 web server, 1 application server, 1 database.
+A web server takes http requests and outputs static  
+html data. Static in that the output can not be interacted with in order to 
+generate more complex and logical outcomes. This weakness is were 
+the app server fills in. The app server takes the http request and generates 
+a system that allows for the user of the website to interact with the website 
+and generate logic that is relevant to the user. For instance, say i wanted 
+to access a website that converts currencies from one to another. The web 
+server will present the website that takes input of the currency i want to convert 
+whilst also passing the request to the app server. The app server does the 
+converting in the background and presents me with the logic of my request. 
+
+The web server passes the www.foobar.com request to the app server the 
+app server generates the logic of the request, accessing the database through 
+a database query. A database is simply an organised collection of information. 
+Organised usually through tables of rows and columns for convenience. 
+Access and manipulation of this data in the tables is through queries. The 
+query response is passed back to the app server which in turn passes 
+back to the web server for presentation to the client through an http web 
+page. This page travels through the internet back to the router and from 
+the router is outputted to the client via the output screen.
+
+All three have additional security features outline below:
+1. FireWalls - each server is equipped with a firewall. A firewall is a device that filters 
+access to a computer system restricting access from sites and systems that may be
+deemed as malicious/dangerous. These firewalls are meant to restrict access to 
+foobar.com only to desired or approved clients.
+
+2. HTTPS Connection - in this setup requests from the clients and the responses 
+from the servers are secured through encryption ensuring the data exchange can not reviewed by malicious software and individuals. This added layer of security ensure personal data, such as passwords are not freely available to hackers.
+
+3. SSL - Socket Secure Layer, the encryption is made possible via a ‘handshake’ between the client and server through the sharing of the public key(server side) and private key(client side) to decrypt the exchanges between the two. Since the private key is not freely available it means a hacker or malicious actor is unable to access the data in the exchanges between the server and the client because they do not have access to the private the key that decrypts the data.
+
+In theory, this works fine and addresses the danger posed on one server systems.
+
+1. SPOF or Single Point of Failure refers to any place in the system where 
+if a fault develops the entire system or part of the system is compromised. 
+In this set up a SPOF at any point means access to the foobar.com website is still available due to the redundancy of the second and third servers are backups. 
+
+2. Any maintenance of the website, can still be done without much downtime because traffic can be directed to the other 2 servers whilst maintenance work is being done on the other and vice versa. All the time the website is still available to clients. Additionally, with three servers additional traffic can be managed and scalability of the website is better in this system.
+
+3. The security features introduced make for secure browsing the exchange of sensitive data between the clients and the servers through encryption makes it difficult for hackers to gain access to sensitive information
+
+https://drive.google.com/file/d/1A-FxpFjZAD3skqJKbnagKGfdkdHIMvoe/view?usp=sharing.
