@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # demo of creation of ssh key with name, bit and pphrase
 
-ssh-keygen -t rsa -f ~/.ssh/school -C school -b 2048 -N "betty"
+ssh-keygen -t rsa -f school -C school -b 4096 -N "betty"
