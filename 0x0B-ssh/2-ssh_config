@@ -1,0 +1,6 @@
+#!/usr/bin/env env
+# my ssh client configuration
+
+Host ubuntu
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/school
