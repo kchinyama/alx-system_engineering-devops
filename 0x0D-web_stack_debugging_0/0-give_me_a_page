@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # demo of altering server to print string when queried at the root
-echo "ServiceName localhost" >> /etc/apache.conf
-service apache start
+echo "ServiceName localhost" >> /etc/apache2.conf
+service apache2 start
