@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# resetting nginx server to listen on port 80 - if it wasnt at the beggining
+
+sudo ufw allow 80/tcp
