@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# demo script showing an ssh connection via private key
+
+ssh -i ~/.ssh/school ubuntu@54.175.72.202
