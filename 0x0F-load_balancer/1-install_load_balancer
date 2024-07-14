@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# installation nd configuration of load balancer
+
+# install packages from www.haproxy.debian.net/#distribution=Ubuntu&release=focal&version=2.9
+# use y flag for auto yes eply to all intallation requests
+apt-get install --no-install-recommends -y software-properties-common
+
+add-apt-repository -y ppa:vbernat/haproxy-2.9
+
+apt-get install -y haproxy=2.9.\*
