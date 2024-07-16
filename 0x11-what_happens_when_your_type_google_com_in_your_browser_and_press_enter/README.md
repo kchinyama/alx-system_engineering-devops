@@ -1,0 +1,1 @@
+This folder contains my complted tasks in the 0x11-what_happens_when_your_type_google_com_in_your_browser_and_press_enter projject of the alx program. It demostrates my understatdning of the how the internet works as a system
