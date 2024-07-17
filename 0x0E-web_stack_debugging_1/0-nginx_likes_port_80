@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
 # demo script of how to get nginx to listen on port 80
 
-sudo service nginx status
-
 sudo service nginx restart
