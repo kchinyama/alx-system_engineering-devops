@@ -17,7 +17,7 @@ new_direction="server_name _;\n\trewrite ^\/redirect https:\/\/github.com\/kchin
 sudo sed -i "s/server_name _;/$new_direction/" /etc/nginx/sites-enabled/default
 
 # create our own custom error message
-echo "Sorry, wrong page" | sudo tee /var/www/html/404.html
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
 
 # custom response header revealing server at work
 sudo sed -i "server_name _;/a add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-enabled/default;
