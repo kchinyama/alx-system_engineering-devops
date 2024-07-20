@@ -1,10 +1,29 @@
 #!/usr/bin/env bash
-# installation nd configuration of load balancer
+#installation of HAproxy and its configuration
 
-# install packages from www.haproxy.debian.net/#distribution=Ubuntu&release=focal&version=2.9
-# use y flag for auto yes eply to all intallation requests
+# update the ubuntu packages
+sudo apt-get -y update
+ 
+# step one - install package of choice from wwww.https://haproxy.debian.net
+# us -y flags to auto accept all conditions
 apt-get install --no-install-recommends -y software-properties-common
-
 add-apt-repository -y ppa:vbernat/haproxy-2.9
+apt-get -y install haproxy=2.9.\*
 
-apt-get install -y haproxy=2.9.\*
+# with installation successful configure the load balancer accordingly
+echo "frontend myservers
+    bind *:80
+    mode http
+    default_backend web-backend
+
+backend web-backend
+    balance roundrobin
+    server 194670-web-01 54.175.72.202:80 check
+    server 194670-web-02 54.146.56.102:80 check" >> /etc/haproxy/haproxy.cfg
+
+#enable HAproxy to be started by an init script
+echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
+
+
+#with changes made restart HAproxy
+sudo service haproxy restart
