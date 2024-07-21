@@ -11,7 +11,7 @@ sudo apt-get install -y nginx
 echo "Hello World!" | sudo tee /var/www/html/index.html
 
 # carry out a redirection
-new_direction="server_name _;\n\trewrite ^\/redirect https:\/\/github.com\/kchinyama permanent;"
+new_direction="server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/kchinyama permanent;"
 
 
 sudo sed -i "s/server_name _;/$new_direction/" /etc/nginx/sites-enabled/default
