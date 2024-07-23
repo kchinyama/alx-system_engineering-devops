@@ -3,11 +3,11 @@
 
 sudo groupadd -r nginx
 sudo useradd nginx -r -g nginx -d /var/cache/nginx -s /sbin/nologin
-
-sudo tee -a /etc/nginx/nginx.conf <<EOF
-user nginx;
-listen 8080;
-EOF
+sudo sed -i '/^user nginx;/a listen 8080;' /etc/nginx/nginx.conf
+#sudo tee -a /etc/nginx/nginx.conf <<EOF
+#user nginx;
+#listen 8080;
+#EOF
 #echo "user nginx;" | sudo tee -a /etc/nginx/nginx.conf
 
 #echo "listen 8080;" | sudo tee -a /etc/nginx/nginx.conf
