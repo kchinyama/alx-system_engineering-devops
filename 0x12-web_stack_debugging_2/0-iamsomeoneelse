@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 # demo script of using whoami to display current user
 
-#echo "$(whoami)"
-if [[ "$(whoami)" -eq "root" ]]; then
+if [[ "$(whoami)" -eq "$(root)" ]]; then
 	echo "$1"
 fi
