@@ -6,4 +6,7 @@ sudo useradd nginx -r -g nginx -d /var/cache/nginx -s /sbin/nologin
 
 echo "user nginx;" | sudo tee -a /etc/nginx/nginx.conf
 
+echo "listen 8080;" | sudo tee -a /etc/nginx/nginx.conf
+
+
 sudo service nginx restart
