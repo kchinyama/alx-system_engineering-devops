@@ -11,9 +11,10 @@ sudo apt-get -y install nginx
 # edit response header
 echo "Hello World!" | sudo tee /var/www/html/index.html
 
-redirection="server_name _;/n/trewrite ^https:\/\/youtube.com\/@kalichipictures8299 permanent;"
+new_direction="server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/kchinyama permanent;"
+#redirection="server_name _;/n/trewrite ^https:\/\/youtube.com\/@kalichipictures8299 permanent;"
 
-sudo sed -i "s/server_name _;/$redirection/" /etc/nginx/sites-enabled/default
+sudo sed -i "s/server_name _;/$new_direction/" /etc/nginx/sites-enabled/default
 
 sudo nginx -t
 
