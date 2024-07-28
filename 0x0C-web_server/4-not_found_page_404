@@ -16,6 +16,6 @@ server_error="listen 80 default_server;\n\terror_page 404 \/404_error.html;\n\tl
 
 sudo sed -i "s/listen 80 default_server;/$server_error/" /etc/nginx/sites-enabled/default
 
-echo "Ceci n'est pas une page" | sudo tee /var/www/html/404_error.html
+echo "Ceci n'est pas une page\n" | sudo tee /var/www/html/404_error.html
 
 sudo nginx restart
