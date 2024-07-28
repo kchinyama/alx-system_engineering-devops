@@ -7,9 +7,10 @@ sudo apt-get install nginx
 
 echo "Hello World!" | sudo tee /var/www/html/index.html
 
-redirection="server_name _;\n\trewrite ^\/redirect_me https:\/\/youtube.com\/@kalichipictures8299 permanent;"
+new_direction="server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/kchinyama permanent;"
+#redirection="server_name _;\n\trewrite ^\/redirect_me https:\/\/youtube.com\/@kalichipictures8299 permanent;"
 
-sudo sed -i "s/server_name _;/$redirection/" /etc/nginx/sites-enabled/default
+sudo sed -i "s/server_name _;/$new_direction/" /etc/nginx/sites-enabled/default
 
 server_error="listen 80 default_server;\n\terror_page 404 \/404_error.html;\n\tlocation = \/404_error.html {\n\t\troot \/var\/www\/html;\n\t\tinternal;\n\t}"
 
